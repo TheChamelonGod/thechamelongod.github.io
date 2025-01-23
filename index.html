@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7912153832867856"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/600x315/75/33/eb/7533eb17212ce66e206aca54f9760370.jpg">
+    <title>Sigma Games</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Google Sans", Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            background-image: url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmxhY2slMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .button-17 {
+            align-items: center;
+            appearance: none;
+            background-color: #333;
+            border-radius: 24px;
+            border: 1px solid #555;
+            color: #dcdcdc;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 14px;
+            font-weight: 500;
+            height: 48px;
+            justify-content: center;
+            padding: 0 24px;
+            text-transform: none;
+            transition: all 0.3s ease;
+        }
+
+        .button-17:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .button-17:focus {
+            outline: 2px solid #4285f4;
+        }
+
+        input {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #dcdcdc;
+            font-size: 16px;
+            width: 300px;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px;
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function openUrl(url) {
+            let win = window.open("about:blank");
+            if (!url.startsWith("https://") && !url.startsWith("http://")) {
+                url = "https://" + url;
+            }
+            win.document.write(`
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="${url}" 
+                    frameborder="0" 
+                    allowfullscreen 
+                    style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;">
+                </iframe>`);
+        }
+ document.addEventListener("DOMContentLoaded", function () {
+        const inputField = document.getElementById("sigma");
+        inputField.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                openUrl(inputField.value);
+            }
+        });
+    });
+
+    </script>
+</head>
+<body>
+    <h1>Sigma Games</h1>
+    <div class="buttons">
+        <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
+        <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
+        <button class="button-17" onclick="openUrl('thepizzaedition.github.io')">Pizza Edition</button>
+        <button class="button-17" onclick="openUrl('https://thepizzaedition.github.io/assets/allgames/polytrack41/index.html')">Polytrack</button>
+        <button class="button-17" onclick="openUrl('retrogames.cc')">Retrogames</button>
+        <button class="button-17" onclick="openUrl('retrogames.cc/embed/19495-metroid-fusion-j-polla.html')">Metroid Fusion</button>
+        <button class="button-17" onclick="openUrl('hianime.to')">Hi Anime</button>
+    </div>
+    <input id="sigma" placeholder="Enter URL here..." />
+    <a href="https://github.com/Kye1331/Game-Stuff/archive/refs/tags/SigmaGamesV5.zip">Download this website as an HTML file</a>
+</body>
+</html>
