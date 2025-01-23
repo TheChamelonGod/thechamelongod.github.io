@@ -206,17 +206,35 @@
             background: rgba(68, 68, 68, 0.9);
         }
 
-        /* Dynamic Background */
-        @keyframes dynamicBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #1e1e1e;
         }
 
-        body.dynamic-bg {
-            background: linear-gradient(270deg, #1e1e1e, #2a2a2a, #1e1e1e);
-            background-size: 200% 200%;
-            animation: dynamicBackground 10s ease infinite;
+        body.light-mode .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #1e1e1e;
+        }
+
+        body.light-mode .button-17 {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #1e1e1e;
+            border-color: #ccc;
+        }
+
+        body.light-mode input {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #1e1e1e;
+            border-color: #ccc;
+        }
+
+        body.light-mode a {
+            color: #1a73e8;
+        }
+
+        body.light-mode a:hover {
+            color: #4285f4;
         }
     </style>
     <script>
@@ -290,7 +308,6 @@
         document.body.appendChild(themeToggle);
 
         themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dynamic-bg");
             document.body.classList.toggle("light-mode");
             themeToggle.textContent = document.body.classList.contains("light-mode") ? "🌙" : "🌞";
         });
