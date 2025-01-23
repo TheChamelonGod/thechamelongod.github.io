@@ -8,6 +8,7 @@
     <link rel="icon" type="image/webp" href="https://pics.craiyon.com/2024-09-14/_uiGuuz7TqOX4qGhEVftjw.webp">
     <title>Chamelon Rizz</title>
     <style>
+        /* General Styles */
         body {
             margin: 0;
             font-family: "Google Sans", Arial, sans-serif;
@@ -22,6 +23,8 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
+            overflow: hidden; /* Prevent scrollbars from mouse trail */
+            cursor: none; /* Hide default cursor */
         }
 
         h1 {
@@ -118,9 +121,152 @@
             max-width: 900px;
             text-align: center;
         }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ff00; /* Neon green */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out, width 0.2s ease-out, height 0.2s ease-out;
+            z-index: 1000;
+        }
+
+        .custom-cursor.active {
+            width: 40px;
+            height: 40px;
+            border-color: #00ff88; /* Brighter neon green */
+        }
+
+        /* Mouse Trail Effect */
+        .mouse-trail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.8), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #00ff00; /* Neon green */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(51, 51, 51, 0.8);
+            border: 1px solid #555;
+            border-radius: 12px;
+            padding: 10px;
+            color: #dcdcdc;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(68, 68, 68, 0.9);
+        }
+
+        /* Dynamic Background */
+        @keyframes dynamicBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body.dynamic-bg {
+            background: linear-gradient(270deg, #1e1e1e, #2a2a2a, #1e1e1e);
+            background-size: 200% 200%;
+            animation: dynamicBackground 10s ease infinite;
+        }
     </style>
     <script>
+        // Custom Cursor
+        const cursor = document.createElement("div");
+        cursor.className = "custom-cursor";
+        document.body.appendChild(cursor);
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+
+        document.addEventListener("mousedown", () => {
+            cursor.classList.add("active");
+        });
+
+        document.addEventListener("mouseup", () => {
+            cursor.classList.remove("active");
+        });
+
+        // Mouse Trail Effect
+        document.addEventListener("mousemove", (e) => {
+            const trail = document.createElement("div");
+            trail.className = "mouse-trail";
+            trail.style.left = `${e.pageX}px`;
+            trail.style.top = `${e.pageY}px`;
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 500);
+        });
+
+        // Loading Animation
+        function showLoading() {
+            const loading = document.createElement("div");
+            loading.className = "loading-overlay";
+            loading.innerHTML = '<div class="loading-spinner"></div>';
+            document.body.appendChild(loading);
+        }
+
+        function hideLoading() {
+            const loading = document.querySelector(".loading-overlay");
+            if (loading) loading.remove();
+        }
+
+        // Open URL Function
         function openUrl(url) {
+            showLoading();
             let win = window.open("about:blank");
             if (!url.startsWith("https://") && !url.startsWith("http://")) {
                 url = "https://" + url;
@@ -134,8 +280,22 @@
                     allowfullscreen 
                     style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;">
                 </iframe>`);
+            setTimeout(hideLoading, 2000); // Simulate loading delay
         }
 
+        // Dark/Light Mode Toggle
+        const themeToggle = document.createElement("div");
+        themeToggle.className = "theme-toggle";
+        themeToggle.textContent = "🌓";
+        document.body.appendChild(themeToggle);
+
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dynamic-bg");
+            document.body.classList.toggle("light-mode");
+            themeToggle.textContent = document.body.classList.contains("light-mode") ? "🌙" : "🌞";
+        });
+
+        // Enter Key Listener for Input Field
         document.addEventListener("DOMContentLoaded", function () {
             const inputField = document.getElementById("chamelon");
             inputField.addEventListener("keydown", function (event) {
