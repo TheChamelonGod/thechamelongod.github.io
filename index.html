@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="https://pics.craiyon.com/2024-09-14/_uiGuuz7TqOX4qGhEVftjw.webp">
+    <link rel="icon" type="image/webp" href="https://pics.craiyon.com/2024-09-14/_uiGuuz7TqOX4qGhEVftjw.webp">
     <title>Chamelon Rizz</title>
     <style>
         body {
@@ -16,43 +16,55 @@
             background-image: url('https://img.freepik.com/free-vector/hand-painted-galaxy-background_23-2148965762.jpg?semt=ais_hybrid');
             background-size: cover;
             background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
             color: #fff;
-            margin-top: 20px;
+            margin-top: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
         }
 
         .button-17 {
             align-items: center;
             appearance: none;
-            background-color: #333;
-            border-radius: 24px;
+            background-color: rgba(51, 51, 51, 0.8);
+            border-radius: 12px;
             border: 1px solid #555;
             color: #dcdcdc;
             cursor: pointer;
             display: inline-flex;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 500;
-            height: 48px;
+            height: 60px;
             justify-content: center;
             padding: 0 24px;
             text-transform: none;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .button-17:hover {
-            background-color: #444;
+            background-color: rgba(68, 68, 68, 0.9);
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .button-17:focus {
@@ -62,14 +74,22 @@
         input {
             display: block;
             margin: 20px auto;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #555;
-            border-radius: 5px;
-            background-color: #2a2a2a;
+            border-radius: 8px;
+            background-color: rgba(42, 42, 42, 0.8);
             color: #dcdcdc;
             font-size: 16px;
-            width: 300px;
+            width: 100%;
+            max-width: 400px;
             text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4285f4;
+            box-shadow: 0 0 8px rgba(66, 133, 244, 0.5);
         }
 
         a {
@@ -79,15 +99,27 @@
             color: #4285f4;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
         a:hover {
+            color: #6aa2f8;
             text-decoration: underline;
+        }
+
+        .container {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
         }
     </style>
     <script>
-        //511 = bad
-        // 83 = not rizz
         function openUrl(url) {
             let win = window.open("about:blank");
             if (!url.startsWith("https://") && !url.startsWith("http://")) {
@@ -103,30 +135,32 @@
                     style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;">
                 </iframe>`);
         }
- document.addEventListener("DOMContentLoaded", function () {
-        const inputField = document.getElementById("chamelon");
-        inputField.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                openUrl(inputField.value);
-            }
-        });
-    });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputField = document.getElementById("chamelon");
+            inputField.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    openUrl(inputField.value);
+                }
+            });
+        });
     </script>
 </head>
 <body>
-    <h1>Chamelon Games</h1>
-    <div class="buttons">
-        <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
-        <button class="button-17" onclick="openUrl('Itch.io')">Itch</button>
-        <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
-        <button class="button-17" onclick="openUrl('thepizzaedition.github.io')">Pizza Edition</button>
-        <button class="button-17" onclick="openUrl('https://thepizzaedition.github.io/assets/allgames/polytrack41/index.html')">Polytrack</button>
-        <button class="button-17" onclick="openUrl('retrogames.cc')">Retrogames</button>
-        <button class="button-17" onclick="openUrl('retrogames.cc/embed/19495-metroid-fusion-j-polla.html')">Metroid Fusion</button>
-        <button class="button-17" onclick="openUrl('hianime.to')">Hi Anime</button>
+    <div class="container">
+        <h1>Chamelon Games</h1>
+        <div class="buttons">
+            <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
+            <button class="button-17" onclick="openUrl('Itch.io')">Itch</button>
+            <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
+            <button class="button-17" onclick="openUrl('thepizzaedition.github.io')">Pizza Edition</button>
+            <button class="button-17" onclick="openUrl('https://thepizzaedition.github.io/assets/allgames/polytrack41/index.html')">Polytrack</button>
+            <button class="button-17" onclick="openUrl('retrogames.cc')">Retrogames</button>
+            <button class="button-17" onclick="openUrl('retrogames.cc/embed/19495-metroid-fusion-j-polla.html')">Metroid Fusion</button>
+            <button class="button-17" onclick="openUrl('hianime.to')">Hi Anime</button>
+        </div>
+        <input id="chamelon" placeholder="Enter Rizz URL here..." />
+        <a href="https://github.com/TheChamelonGod/Game-Stuff/archive/refs/tags/ChamelonGames.zip">Download this website as an HTML file</a>
     </div>
-    <input id="chamelon" placeholder="Enter Rizz URL here..." />
-    <a href="https://github.com/TheChamelonGod/Game-Stuff/archive/refs/tags/ChamelonGames.zip">Download this website as an HTML file</a>
 </body>
 </html>
