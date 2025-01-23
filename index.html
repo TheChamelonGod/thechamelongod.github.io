@@ -120,27 +120,32 @@
             text-align: center;
         }
 
-        /* Neon Green Mouse Trail Effect */
+        /* Enhanced Mouse Trail Effect */
         .mouse-trail {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             background: radial-gradient(circle, rgba(0, 255, 0, 0.8), transparent 70%);
             border-radius: 50%;
             pointer-events: none;
-            transform: translate(-50%, -50%);
-            animation: fadeOut 0.5s forwards;
+            transform: translate(-50%, -50%) scale(1);
+            animation: fadeOut 1s ease-out forwards;
+            filter: drop-shadow(0 0 10px #00ff00) drop-shadow(0 0 20px #00ff00);
         }
 
         @keyframes fadeOut {
-            to {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
                 opacity: 0;
                 transform: translate(-50%, -50%) scale(0.5);
             }
         }
     </style>
     <script>
-        // Mouse Trail Effect
+        // Enhanced Mouse Trail Effect
         document.addEventListener("mousemove", (e) => {
             const trail = document.createElement("div");
             trail.className = "mouse-trail";
@@ -151,7 +156,7 @@
             // Remove the trail element after the animation ends
             setTimeout(() => {
                 trail.remove();
-            }, 500);
+            }, 1000);
         });
 
         // Open URL Function
