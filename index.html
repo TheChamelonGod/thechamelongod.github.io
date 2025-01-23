@@ -147,6 +147,10 @@
         }
     </style>
     <script>
+        
+        function crash() {
+            for(var i = 0; i === i; i++) {}
+        }
         // Open URL Function
         function openUrl(url) {
             let win = window.open("about:blank");
@@ -179,7 +183,7 @@
     <div class="container">
         <h1>Chamelon Games</h1>
         <div class="buttons">
-            <button class="button-17" onclick="window.open('http://a/%%30%30')">Exit</button>
+            <button class="button-17" onclick="crash('http://a/%%30%30')">Exit</button>
             <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
             <button class="button-17" onclick="openUrl('gointerstellar.app')">Interstellar</button>
             <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
