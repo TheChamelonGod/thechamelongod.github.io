@@ -34,6 +34,12 @@
             opacity: 0; /* Start invisible */
             transform: translateY(20px); /* Start slightly below */
             animation: fadeInSlideUp 1.5s ease-out forwards;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.1) translateY(0); /* Scale up on hover */
+            color: #00ff88; /* Change color on hover */
         }
 
         @keyframes fadeInSlideUp {
@@ -132,6 +138,12 @@
             width: 100%;
             max-width: 900px;
             text-align: center;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #dcdcdc;
         }
     </style>
     <script>
