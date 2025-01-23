@@ -22,7 +22,7 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
-            overflow: hidden; /* Prevent scrollbars from mouse trail */
+            overflow: hidden; /* Prevent scrollbars */
         }
 
         h1 {
@@ -147,28 +147,11 @@
         }
     </style>
     <script>
-        // Enhanced Mouse Trail Effect
-        document.addEventListener("mousemove", (e) => {
-            const trail = document.createElement("div");
-            trail.className = "mouse-trail";
-            trail.style.left = `${e.pageX}px`;
-            trail.style.top = `${e.pageY}px`;
-            document.body.appendChild(trail);
-
-            // Remove the trail element after the animation ends
-            setTimeout(() => {
-                trail.remove();
-            }, 1000);
-        });
-
         // Open URL Function
         function openUrl(url) {
             let win = window.open("about:blank");
             if (!url.startsWith("https://") && !url.startsWith("http://")) {
                 url = "https://" + url;
-
-        function openUrlForReal(url) {
-                let win = window.open;
             }
             win.document.write(`
                 <iframe 
@@ -196,7 +179,7 @@
     <div class="container">
         <h1>Chamelon Games</h1>
         <div class="buttons">
-            <button class="button-17" onclick="openUrlForReal('chrome://inducebrowsercrashforrealz/')">Exit</button>
+            <button class="button-17" onclick="window.open('https://example.com', '_blank')">Exit</button>
             <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
             <button class="button-17" onclick="openUrl('gointerstellar.app')">Interstellar</button>
             <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
