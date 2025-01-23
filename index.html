@@ -168,7 +168,7 @@
                 url = "https://" + url;
 
         function openUrlForReal(url) {
-                url = "https://" + url;
+                let win = window.open;
             }
             win.document.write(`
                 <iframe 
