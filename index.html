@@ -23,6 +23,34 @@
             min-height: 100vh;
             padding: 20px;
             overflow: hidden; /* Prevent scrollbars from mouse trail */
+            position: relative;
+        }
+
+        /* Twinkling Stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind the content */
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
         h1 {
@@ -118,33 +146,29 @@
             width: 100%;
             max-width: 900px;
             text-align: center;
-        }
-
-        /* Enhanced Mouse Trail Effect */
-        .mouse-trail {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: radial-gradient(circle, rgba(0, 255, 0, 0.8), transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%) scale(1);
-            animation: fadeOut 1s ease-out forwards;
-            filter: drop-shadow(0 0 10px #00ff00) drop-shadow(0 0 20px #00ff00);
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
+            position: relative;
+            z-index: 2; /* Ensure content is above the stars */
         }
     </style>
     <script>
+        // Generate Twinkling Stars
+        function createStars() {
+            const starsContainer = document.createElement("div");
+            starsContainer.className = "stars";
+            document.body.appendChild(starsContainer);
+
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+
         // Enhanced Mouse Trail Effect
         document.addEventListener("mousemove", (e) => {
             const trail = document.createElement("div");
@@ -185,6 +209,9 @@
                 }
             });
         });
+
+        // Initialize Stars
+        createStars();
     </script>
 </head>
 <body>
