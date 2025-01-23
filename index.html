@@ -23,42 +23,28 @@
             min-height: 100vh;
             padding: 20px;
             overflow: hidden; /* Prevent scrollbars from mouse trail */
-            position: relative;
-        }
-
-        /* Twinkling Stars */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place behind the content */
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle linear infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
         }
 
         h1 {
             text-align: center;
-            color: #fff;
             margin-top: 0;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0; /* Start invisible */
+            transform: translateY(20px); /* Start slightly below */
+            animation: fadeInSlideUp 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .buttons {
@@ -146,29 +132,9 @@
             width: 100%;
             max-width: 900px;
             text-align: center;
-            position: relative;
-            z-index: 2; /* Ensure content is above the stars */
         }
     </style>
     <script>
-        // Generate Twinkling Stars
-        function createStars() {
-            const starsContainer = document.createElement("div");
-            starsContainer.className = "stars";
-            document.body.appendChild(starsContainer);
-
-            for (let i = 0; i < 200; i++) {
-                const star = document.createElement("div");
-                star.className = "star";
-                star.style.width = `${Math.random() * 3}px`;
-                star.style.height = star.style.width;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
-                starsContainer.appendChild(star);
-            }
-        }
-
         // Enhanced Mouse Trail Effect
         document.addEventListener("mousemove", (e) => {
             const trail = document.createElement("div");
@@ -209,9 +175,6 @@
                 }
             });
         });
-
-        // Initialize Stars
-        createStars();
     </script>
 </head>
 <body>
@@ -219,7 +182,7 @@
         <h1>Chamelon Games</h1>
         <div class="buttons">
             <button class="button-17" onclick="openUrl('hahagames.com')">Hahagames</button>
-            <button class="button-17" onclick="openUrl('Itch.io')">Itch</button>
+            <button class="button-17" onclick="openUrl('gointerstellar.app')">Interstellar</button>
             <button class="button-17" onclick="openUrl('typeracer.gq')">Rammerhead Proxy</button>
             <button class="button-17" onclick="openUrl('thepizzaedition.github.io')">Pizza Edition</button>
             <button class="button-17" onclick="openUrl('https://thepizzaedition.github.io/assets/allgames/polytrack41/index.html')">Polytrack</button>
