@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] - Animator Portfolio</title>
+    <title>[Your Name] - Animator Portfolio | Cosmic Creations</title>
     <style>
         /* Basic Reset */
         * {
@@ -13,15 +13,24 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.7;
+            color: #E0E7FF; /* Light lavender/blue for text */
+            background-color: #0f172a; /* Deep dark blue - space background base */
+
+            /* Starry background effect */
+            background-image:
+                radial-gradient(rgba(200, 200, 255, 0.6) 0.5px, transparent 0.5px), /* Fainter, smaller stars */
+                radial-gradient(rgba(220, 220, 255, 0.4) 0.75px, transparent 0.75px), /* Slightly larger, dimmer */
+                radial-gradient(rgba(255, 255, 255, 0.3) 0.5px, transparent 0.5px); /* Sparse brighter stars */
+            background-size: 30px 30px, 50px 50px, 70px 70px; /* Density control */
+            background-position: 0 0, 15px 15px, 35px 35px; /* Offset patterns for randomness */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .container {
             width: 90%;
-            max-width: 960px;
+            max-width: 1000px; /* Slightly wider for a more modern feel */
             margin: auto;
             overflow: hidden;
             padding: 0 20px;
@@ -29,13 +38,16 @@
 
         /* Header & Navigation */
         header {
-            background: #333;
-            color: #fff;
+            background: rgba(17, 24, 39, 0.7); /* Dark blue, semi-transparent */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            color: #E0E7FF;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(76, 90, 137, 0.3);
         }
 
         header .container {
@@ -47,10 +59,17 @@
         header h1 {
             margin: 0;
             font-size: 1.8em;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         header h1 a {
-            color: #fff;
+            color: #A5B4FC; /* Light Indigo */
             text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        header h1 a:hover {
+            color: #C7D2FE; /* Lighter Indigo */
+            text-shadow: 0 0 8px rgba(199, 210, 254, 0.5);
         }
 
         header nav ul {
@@ -59,55 +78,74 @@
 
         header nav ul li {
             display: inline;
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         header nav ul li a {
-            color: #fff;
+            color: #A5B4FC;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            padding-bottom: 5px; /* Space for potential underline effect */
         }
         header nav ul li a:hover {
-            color: #00bcd4; /* Accent color */
+            color: #C7D2FE;
+            text-shadow: 0 0 5px rgba(199, 210, 254, 0.4);
+            /* border-bottom: 2px solid #818CF8; */ /* Optional underline */
         }
 
         /* Hero Section */
         .hero {
-            background: #00796b; /* Darker teal */
-            color: #fff;
-            padding: 60px 0;
+            /* Subtle nebula effect in the background */
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+            color: #F9FAFB; /* Almost white for high contrast */
+            padding: 80px 0 100px 0;
             text-align: center;
+            position: relative; /* Ensure it's above the body's static stars */
         }
 
         .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em; /* Larger headline */
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #C7D2FE;
+            text-shadow: 0 0 10px rgba(165, 180, 252, 0.3), 0 0 20px rgba(129, 140, 248, 0.2);
         }
 
         .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #A5B4FC;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero .cta-button {
             display: inline-block;
-            background: #00bcd4; /* Accent color */
+            background: #6366F1; /* Indigo */
             color: #fff;
-            padding: 10px 20px;
+            padding: 14px 28px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
         }
         .hero .cta-button:hover {
-            background: #0097a7;
+            background: #4F46E5; /* Darker Indigo */
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
         }
 
         /* Section Styling */
         section {
-            padding: 40px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5); /* Darker, subtle border */
+            position: relative; /* For z-index context if needed */
         }
         section:last-of-type {
             border-bottom: none;
@@ -115,16 +153,30 @@
 
         section h2.section-title {
             text-align: center;
-            font-size: 2em;
-            margin-bottom: 30px;
-            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #A5B4FC; /* Light Indigo */
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(165, 180, 252, 0.3);
         }
 
         /* About Section */
         #about p {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 20px auto;
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+            font-size: 1.1em;
+            color: #D1D5DB; /* Slightly less bright than hero text */
+        }
+        #about .skills {
+            margin-top: 30px;
+        }
+        #about .skills h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #A5B4FC;
+            font-size: 1.4em;
         }
         #about .skills ul {
             list-style: none;
@@ -132,53 +184,63 @@
         }
         #about .skills ul li {
             display: inline-block;
-            background: #e0e0e0;
-            color: #333;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 3px;
-            font-size: 0.9em;
+            background: rgba(55, 65, 81, 0.7); /* Dark slate, semi-transparent */
+            color: #E0E7FF;
+            padding: 8px 15px;
+            margin: 8px;
+            border-radius: 20px; /* Pill shape */
+            font-size: 0.95em;
+            border: 1px solid rgba(76, 90, 137, 0.4);
+            transition: all 0.3s ease;
         }
-
+        #about .skills ul li:hover {
+            background: #4F46E5; /* Indigo on hover */
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+        }
 
         /* Portfolio Section */
         .portfolio-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid; /* Using grid for more complex layouts easily */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 30px;
             justify-content: center;
         }
 
         .portfolio-item {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background-color: rgba(30, 41, 59, 0.6); /* Dark blue-gray, semi-transparent */
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            flex-basis: calc(50% - 20px); /* Two columns */
-            max-width: calc(50% - 20px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 15px rgba(76, 137, 255, 0.05); /* Subtle glow */
+            backdrop-filter: blur(10px); /* Glassmorphism */
+            -webkit-backdrop-filter: blur(10px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Flex column for content structure */
+            flex-direction: column;
         }
         .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 25px rgba(99, 102, 241, 0.2);
         }
 
         .portfolio-item img, .portfolio-item .video-placeholder {
             width: 100%;
-            height: auto;
+            height: auto; /* Maintain aspect ratio for images */
             display: block;
+            object-fit: cover; /* Ensure images cover their area nicely */
         }
-        .video-placeholder { /* For embedded videos */
+        .video-placeholder {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            background: #ccc; /* Placeholder background */
+            background: #1f2937; /* Darker placeholder background */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777;
+            color: #9ca3af; /* Muted text for placeholder */
             font-style: italic;
         }
         .video-placeholder iframe {
@@ -187,76 +249,115 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: none; /* Remove iframe border */
         }
 
-
         .portfolio-item-content {
-            padding: 15px;
+            padding: 20px;
+            flex-grow: 1; /* Allows content to fill space if items have different heights */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .portfolio-item-content h3 {
             margin-top: 0;
-            font-size: 1.3em;
-            color: #00796b;
+            font-size: 1.4em;
+            color: #A5B4FC; /* Light Indigo */
+            margin-bottom: 10px;
         }
 
         .portfolio-item-content p {
-            font-size: 0.9em;
-            margin-bottom: 10px;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            color: #D1D5DB;
+            flex-grow: 1; /* Paragraph takes available space */
         }
 
-        .portfolio-item-content a.view-project {
-            display: inline-block;
-            background: #00bcd4;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 3px;
-            font-size: 0.9em;
-            transition: background-color 0.3s ease;
+        /* Adjusting the showreel item for potentially larger display */
+        #portfolio h3.showreel-title, #portfolio h3.gallery-title {
+            text-align: center;
+            font-size: 1.8em;
+            color: #C7D2FE;
+            margin-bottom: 25px;
+            margin-top: 30px; /* Space above titles */
         }
-        .portfolio-item-content a.view-project:hover {
-            background: #0097a7;
+        #portfolio h3.showreel-title:first-of-type {
+             margin-top: 0;
         }
+
 
         /* Services Section */
         #services ul {
-            list-style: disc;
-            margin-left: 20px;
-            max-width: 600px;
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            max-width: 700px;
             margin: 0 auto 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
         #services ul li {
-            margin-bottom: 10px;
+            background: rgba(55, 65, 81, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #6366F1; /* Accent border */
+            transition: all 0.3s ease;
+        }
+        #services ul li:hover {
+            transform: translateX(5px);
+            background: rgba(79, 70, 229, 0.3); /* Darker Indigo, semi-transparent */
+        }
+        #services p.service-cta {
+            text-align:center;
+            margin-top:30px;
+            font-size: 1.1em;
+            color: #A5B4FC;
         }
 
         /* Contact Section */
         #contact p {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            color: #D1D5DB;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #contact .contact-links {
             text-align: center;
         }
         #contact .contact-links a {
             display: inline-block;
-            margin: 0 10px;
-            color: #00796b;
+            margin: 10px 15px;
+            color: #818CF8; /* Indigo */
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 600;
+            font-size: 1.2em;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         #contact .contact-links a:hover {
-            text-decoration: underline;
+            color: #C7D2FE; /* Lighter Indigo */
+            text-shadow: 0 0 8px rgba(199, 210, 254, 0.5);
+            border-color: #6366F1;
+            background-color: rgba(99, 102, 241, 0.1);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px 0;
-            background: #333;
-            color: #fff;
-            margin-top: 20px;
+            padding: 30px 0;
+            background: #0f172a; /* Same as body base */
+            color: #94A3B8; /* Muted Slate */
+            margin-top: 40px;
+            border-top: 1px solid rgba(55, 65, 81, 0.5);
+        }
+        footer p {
+            margin-bottom: 5px;
         }
 
         /* Responsive Adjustments */
@@ -266,28 +367,44 @@
                 text-align: center;
             }
             header nav ul {
-                margin-top: 10px;
+                margin-top: 15px;
             }
             header nav ul li {
                 margin: 0 10px;
             }
             .hero h2 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
             .hero p {
-                font-size: 1em;
+                font-size: 1.1em;
             }
-            .portfolio-item {
-                flex-basis: 100%; /* Single column on smaller screens */
-                max-width: 100%;
+            .portfolio-grid {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+            section h2.section-title {
+                font-size: 2.2em;
+            }
+             #services ul {
+                grid-template-columns: 1fr;
             }
         }
         @media (max-width: 480px) {
             header h1 {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
             .hero h2 {
+                font-size: 2em;
+            }
+            .hero .cta-button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+            section h2.section-title {
                 font-size: 1.8em;
+            }
+            #about .skills ul li {
+                padding: 6px 12px;
+                font-size: 0.9em;
             }
         }
 
@@ -311,34 +428,35 @@
 
     <section id="hero" class="hero">
         <div class="container">
-            <h2>Bringing Ideas to Life, Frame by Frame</h2>
-            <p>Passionate Animator specializing in [e.g., 2D Character Animation, Motion Graphics, 3D Storytelling]</p>
-            <a href="#portfolio" class="cta-button">View My Work</a>
+            <h2>Animating the Cosmos, One Frame at a Time</h2>
+            <p>Creative Animator crafting stellar visuals in [e.g., 2D Character Animation, Motion Graphics, Interstellar Storytelling]</p>
+            <a href="#portfolio" class="cta-button">Explore My Universe</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">My Story</h2>
             <p>
-                Hello! I'm [Your Name], a creative and dedicated animator with a knack for storytelling and visual flair.
-                I love to transform concepts into compelling animated sequences. My journey into animation started with
-                [mention a brief inspiration or starting point]. Since then, I've honed my skills in [mention 1-2 key areas].
+                Greetings! I'm [Your Name], an animator with a passion for bringing imaginative worlds and characters to life.
+                My cosmic journey into animation began with [mention a brief inspiration or starting point, e.g., a fascination with sci-fi and cartoons].
+                I thrive on transforming nebulous ideas into vibrant, moving realities.
             </p>
             <p>
-                I believe animation is a powerful medium to communicate, entertain, and evoke emotion.
-                I'm always eager to learn new techniques and collaborate on exciting projects.
+                I believe animation is a universal language, capable of transcending boundaries and sparking wonder.
+                I'm constantly exploring new animation galaxies and eager to collaborate on visionary projects.
             </p>
             <div class="skills">
-                <h3>My Skillset Includes:</h3>
+                <h3>My Constellation of Skills:</h3>
                 <ul>
                     <li>Character Animation</li>
                     <li>Motion Graphics</li>
-                    <li>Storyboarding</li>
+                    <li>Storyboarding & Animatics</li>
                     <li>Adobe After Effects</li>
                     <li>Toon Boom Harmony</li>
-                    <li>Blender / Maya (as applicable)</li>
+                    <li>Blender / Maya</li>
                     <li>Visual Storytelling</li>
+                    <li>Particle Effects</li>
                     <!-- Add more skills -->
                 </ul>
             </div>
@@ -347,42 +465,34 @@
 
     <section id="portfolio">
         <div class="container">
-            <h2 class="section-title">My Portfolio</h2>
+            <h2 class="section-title">Portfolio Nebula</h2>
 
-            <!-- SHOWREEL - REPLACE WITH YOUR EMBED CODE -->
-            <h3>Showreel</h3>
-            <div class="portfolio-item" style="flex-basis: 100%; max-width:100%; margin-bottom: 30px;"> <!-- Full width for showreel -->
+            <h3 class="showreel-title">My Showreel Starstream</h3>
+            <div class="portfolio-item" style="max-width:800px; margin: 0 auto 40px auto;"> <!-- Centered & specific width -->
                 <div class="video-placeholder">
                     <!--
                         To embed a YouTube video:
                         1. Go to your video on YouTube.
                         2. Click "Share" then "Embed".
                         3. Copy the iframe code and paste it here, replacing this comment and the text below.
-                        Example: <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        Example: <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     -->
                     Your Showreel Video (16:9) - Replace with YouTube/Vimeo embed
                 </div>
                 <div class="portfolio-item-content">
-                    <h3>My Latest Animation Showreel</h3>
-                    <p>A compilation of my best work showcasing various animation styles and techniques.</p>
+                    <h3>Latest Animation Showreel</h3>
+                    <p>A voyage through my best animated works, showcasing diverse styles and celestial techniques.</p>
                 </div>
             </div>
 
-            <h3>Project Gallery</h3>
+            <h3 class="gallery-title">Project Gallery</h3>
             <div class="portfolio-grid">
                 <!-- Portfolio Item 1 (GIF or Image) -->
                 <div class="portfolio-item">
-                    <!--
-                        For a GIF or Image:
-                        <img src="path/to/your/animation1.gif" alt="Description of Animation 1">
-                        Recommended: use a placeholder image service if you don't have images yet.
-                        e.g. <img src="https://via.placeholder.com/600x400.png?text=Animated+Short+Clip" alt="Animated Short Clip">
-                    -->
-                    <img src="https://via.placeholder.com/600x400.gif?text=Your+Animation.gif" alt="Project 1 Thumbnail">
+                    <img src="https://via.placeholder.com/600x400.gif?text=Cosmic+Character.gif" alt="Project 1 Thumbnail">
                     <div class="portfolio-item-content">
-                        <h3>Project Title 1: Character Walk Cycle</h3>
-                        <p>A short description of this animation piece. What was the goal? What tools did you use? (e.g., A fluid walk cycle study for a character concept.)</p>
-                        <!-- <a href="#" class="view-project">View Details (Optional)</a> -->
+                        <h3>Project: Galactic Wanderer</h3>
+                        <p>A fluid walk cycle for a character concept, designed for an unannounced indie game. Animated in Toon Boom.</p>
                     </div>
                 </div>
 
@@ -390,29 +500,29 @@
                 <div class="portfolio-item">
                     <div class="video-placeholder">
                         <!-- Replace with your video embed or an <img> tag for a GIF -->
-                        Another Animation (16:9) or GIF - Replace with embed/img
+                        Nebula Intro Sequence (16:9) - Replace with embed/img
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Project Title 2: Motion Graphics Intro</h3>
-                        <p>Brief details about this motion graphics piece. (e.g., An intro sequence for a fictional web series, created in After Effects.)</p>
+                        <h3>Project: Stardust Intro</h3>
+                        <p>An energetic motion graphics intro sequence for a fictional YouTube channel about space exploration. Created in After Effects.</p>
                     </div>
                 </div>
 
                 <!-- Portfolio Item 3 (Image/GIF) -->
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400.png?text=Scene+Still" alt="Project 3 Thumbnail">
+                    <img src="https://via.placeholder.com/600x400.png?text=Alien+Planet+Still" alt="Project 3 Thumbnail">
                     <div class="portfolio-item-content">
-                        <h3>Project Title 3: Animated Explainer Snippet</h3>
-                        <p>Description of this piece. (e.g., A segment from an explainer video illustrating a complex concept simply.)</p>
+                        <h3>Project: Explainer - Alien Worlds</h3>
+                        <p>A snippet from an explainer video visualizing the potential ecosystems on exoplanets. Focus on clear visual communication.</p>
                     </div>
                 </div>
 
                 <!-- Portfolio Item 4 (Image/GIF) -->
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400.gif?text=Looping+Animation.gif" alt="Project 4 Thumbnail">
+                    <img src="https://via.placeholder.com/600x400.gif?text=Spaceship+Loop.gif" alt="Project 4 Thumbnail">
                     <div class="portfolio-item-content">
-                        <h3>Project Title 4: Looping Social Media Ad</h3>
-                        <p>Details about this animation. (e.g., A short, eye-catching looping animation designed for social media advertising.)</p>
+                        <h3>Project: Looping Spaceship Ad</h3>
+                        <p>A short, eye-catching looping animation of a spaceship for a social media campaign. Designed for quick engagement.</p>
                     </div>
                 </div>
                 <!-- Add more portfolio items as needed -->
@@ -422,33 +532,33 @@
 
     <section id="services">
         <div class="container">
-            <h2 class="section-title">Services I Offer</h2>
+            <h2 class="section-title">Services From My Universe</h2>
             <ul>
-                <li>2D Character Animation</li>
-                <li>Motion Graphics Design (Intros, Outros, Lower Thirds)</li>
+                <li>2D Character Animation & Rigging</li>
+                <li>Motion Graphics (Logos, Intros, Titles)</li>
                 <li>Animated Explainer Videos</li>
-                <li>GIF Creation for Social Media & Web</li>
+                <li>Sci-Fi & Fantasy VFX Snippets</li>
                 <li>Storyboarding & Animatics</li>
-                <li>Logo Animation</li>
+                <li>Looping Animations & GIFs</li>
                 <!-- Add or remove services as per your offerings -->
             </ul>
-            <p style="text-align:center; margin-top:20px;">Have a project in mind? Let's discuss how I can bring your vision to life!</p>
+            <p class="service-cta">Have a project that needs to take off? Let's chart a course together!</p>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Make Contact</h2>
             <p>
-                I'm currently available for freelance projects and collaborations.
-                If you'd like to work together or just say hi, feel free to reach out!
+                I'm currently beaming for new freelance missions and collaborative voyages.
+                If you'd like to create something stellar or just send a signal, I'm all ears (or antennae)!
             </p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email Me</a>
+                <a href="mailto:your.email@example.com">Launch Email</a>
                 <!--
                     Optional: Add links to LinkedIn, Vimeo, ArtStation, etc.
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://vimeo.com/yourprofile" target="_blank" rel="noopener noreferrer">Vimeo</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                    <a href="https://vimeo.com/yourprofile" target="_blank" rel="noopener noreferrer">Vimeo Galaxy</a>
                 -->
             </div>
         </div>
@@ -456,8 +566,8 @@
 
     <footer>
         <div class="container">
-            <p>© <script>document.write(new Date().getFullYear())</script> [Your Name]. All Rights Reserved.</p>
-            <p>Simple Animator Portfolio Template</p>
+            <p>© <script>document.write(new Date().getFullYear())</script> [Your Name]. All Celestial Rights Reserved.</p>
+            <p>Animator Portfolio Crafted in the Digital Cosmos</p>
         </div>
     </footer>
 
